@@ -1,0 +1,77 @@
+{
+  "name": "test1",
+  "exercises": [
+    {
+      "task": "In May the days _ sunnier and warmer than in April",
+      "answerOptions": [
+        "sheep",
+        "are",
+        "play",
+        "have",
+        "of",
+        "smaller"
+      ],
+      "trueAnswerId": 1
+    },
+    {
+      "task": "There are many _ and cows in the fields",
+      "answerOptions": [
+        "sheep",
+        "are",
+        "play",
+        "have",
+        "of",
+        "smaller"
+      ],
+      "trueAnswerId": 0
+    },
+    {
+      "task": "The houses in Green Village are _ than in the town",
+      "answerOptions": [
+        "sheep",
+        "are",
+        "play",
+        "have",
+        "of",
+        "smaller"
+      ],
+      "trueAnswerId": 5
+    },
+    {
+      "task": "The Browns _ picnics in the garden.",
+      "answerOptions": [
+        "sheep",
+        "are",
+        "play",
+        "have",
+        "of",
+        "smaller"
+      ],
+      "trueAnswerId": 3
+    },
+    {
+      "task": "There are a lot _ apple trees and beautiful flowers in the garden",
+      "answerOptions": [
+        "sheep",
+        "are",
+        "play",
+        "have",
+        "of",
+        "smaller"
+      ],
+      "trueAnswerId": 4
+    },
+    {
+      "task": "The children _ badminton and fly the kite. The Browns are happy.",
+      "answerOptions": [
+        "sheep",
+        "are",
+        "play",
+        "have",
+        "of",
+        "smaller"
+      ],
+      "trueAnswerId": 2
+    }
+  ]
+}
