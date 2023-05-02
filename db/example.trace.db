@@ -62,3 +62,55 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 8 more
+2023-05-02 06:46:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1375)
+	at org.h2.jdbc.JdbcConnection.createStatement(JdbcConnection.java:206)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCConnectionImpl.createStatement(JDBCConnectionImpl.java:252)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCConnectionImpl.createStatement(JDBCConnectionImpl.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.executeStatement(JDBCUtils.java:615)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.shutdown(GenericDataSource.java:279)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.disconnect(DataSourceDescriptor.java:1305)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.disconnect(DataSourceDescriptor.java:1257)
+	at org.jkiss.dbeaver.registry.DataSourceRegistry$DisconnectTask.run(DataSourceRegistry.java:1029)
+	at org.jkiss.dbeaver.utils.RuntimeUtils$MonitoringTask.run(RuntimeUtils.java:467)
+	at org.jkiss.dbeaver.utils.RuntimeUtils$1.run(RuntimeUtils.java:247)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2023-05-02 06:46:33 database: close
+org.h2.message.DbException: IO Exception: "Closing" [90028-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.close(Store.java:402)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1261)
+	at org.h2.engine.Database.closeImpl(Database.java:1225)
+	at org.h2.engine.Database.close(Database.java:1144)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "Closing" [90028-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 7 more
+Caused by: org.h2.mvstore.MVStoreException: File corrupt reading chunk at position 20480 [2.1.214/6]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:234)
+	at org.h2.mvstore.MVStore.moveChunk(MVStore.java:2227)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:2133)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:2068)
+	at org.h2.mvstore.MVStore.compactMoveChunks(MVStore.java:2041)
+	at org.h2.mvstore.MVStore.compactFile(MVStore.java:2282)
+	at org.h2.mvstore.MVStore.closeStore(MVStore.java:1329)
+	at org.h2.mvstore.MVStore.close(MVStore.java:1291)
+	at org.h2.mvstore.db.Store.close(Store.java:386)
+	... 5 more
+Caused by: org.h2.mvstore.MVStoreException: Not a map: TEGER NOT NULL, [2.1.214/6]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.DataUtils.parseMap(DataUtils.java:816)
+	at org.h2.mvstore.Chunk.<init>(Chunk.java:165)
+	at org.h2.mvstore.Chunk.fromString(Chunk.java:280)
+	at org.h2.mvstore.Chunk.readChunkHeader(Chunk.java:229)
+	... 13 more
